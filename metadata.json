@@ -1,0 +1,8 @@
+{
+  "name": "Visualizador de Atención Web",
+  "description": "Una aplicación para analizar en qué parte de una página web se fija la vista del usuario. Introduce una URL, calibra tu cámara y la aplicación generará un mapa de calor de tu atención visual.",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "prompt": ""
+}

@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Analizador UX de mirada con AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://webgazer.cs.brown.edu/webgazer.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/heatmap.js@2.0.5/build/heatmap.min.js"></script>
+    <style>
+      body {
+        background-color: #111827;
+        color: #f3f4f6;
+      }
+      #webgazerVideoFeed, #webgazerFaceOverlay, #webgazerFaceFeedbackBox {
+        position: fixed !important;
+        top: 20px !important;
+        left: 20px !important;
+        width: 120px !important;
+        height: 90px !important;
+        z-index: 10000;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        border: 2px solid #374151;
+      }
+      #webgazerFaceOverlay, #webgazerFaceFeedbackBox {
+        display: none !important;
+      }
+      .calibration-button {
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .calibration-button:hover {
+        transform: scale(1.2);
+        background-color: #2563eb;
+      }
+      .calibration-button.active {
+        background-color: #1d4ed8;
+        transform: scale(1.1);
+        box-shadow: 0 0 15px #3b82f6;
+      }
+      .gaze-dot {
+        position: fixed;
+        width: 20px;
+        height: 20px;
+        background-color: rgba(239, 68, 68, 0.7);
+        border-radius: 50%;
+        box-shadow: 0 0 10px rgba(239, 68, 68, 0.9);
+        z-index: 10001;
+        pointer-events: none;
+        transition: transform 0.1s linear;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "react": "https://esm.sh/react@^19.1.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
